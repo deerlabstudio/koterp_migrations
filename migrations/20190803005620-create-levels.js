@@ -17,6 +17,9 @@ module.exports = {
       discount: {
         type: Sequelize.FLOAT
       },
+      company: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

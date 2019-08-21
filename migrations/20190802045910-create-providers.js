@@ -32,6 +32,9 @@ module.exports = {
       status: {
         type: Sequelize.BOOLEAN
       },
+      company: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
