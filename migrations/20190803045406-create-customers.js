@@ -23,7 +23,7 @@ module.exports = {
       code: {
         type: Sequelize.STRING
       },
-      company: {
+      isCompany: {
         type: Sequelize.BOOLEAN
       },
       status: {
