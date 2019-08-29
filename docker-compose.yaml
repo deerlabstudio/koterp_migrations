@@ -124,6 +124,44 @@ services:
       - DB_NAME=koterp
       - DB_HOST=koterpdatabase
 
+  purchasesservices:
+    build: ./purchases_services/
+    container_name: koterp_purchasesservices
+    ports:
+      - 9025:9025
+    networks:
+      - koterpnetwork
+    environment:
+      - NODE_ENV=production
+      - SERVICE_NAME="purchases_services"
+      - APP_PORT=9025
+      - APP_HOSTNAME=0.0.0.0
+      - LOGGER_ENABLED=false
+      - LOGGER_LEVEL="info"
+      - DB_USERNAME=root
+      - DB_PASSWORD=admin
+      - DB_NAME=koterp
+      - DB_HOST=koterpdatabase
+  
+  salesservices:
+    build: ./sales_services/
+    container_name: koterp_salesservices
+    ports:
+      - 9026:9026
+    networks:
+      - koterpnetwork
+    environment:
+      - NODE_ENV=production
+      - SERVICE_NAME="sales_services"
+      - APP_PORT=9026
+      - APP_HOSTNAME=0.0.0.0
+      - LOGGER_ENABLED=false
+      - LOGGER_LEVEL="info"
+      - DB_USERNAME=root
+      - DB_PASSWORD=admin
+      - DB_NAME=koterp
+      - DB_HOST=koterpdatabase
+
 networks:
   koterpnetwork:
     external: true
